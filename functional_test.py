@@ -42,12 +42,14 @@ class NewVisitorTest(unittest.TestCase):
         table = self.browser.find_element_by_id('id_list_table')
         rows = table.find_element_by_tag_name('tr')
         self.assertTrue(
-            any(row.text == '1: Buy peacock feathers' for row in rows)
+            any(row.text == '1: Buy peacock feathers' for row in rows),
+            "New to-do item did not apper in table"
         )
 
         # Ainda continua havendo uma caixa de texto convidado-a a acrescentar outro
         # item. Ela insere "use peacock feathers to make a fly" (Usar penas de pavão
         # para fazer um fly - Edith é bem metódica)
+        self.fail('Finish the test!')
 
         # A página é  atualizada novamente e agora mostra os dois itens em sua lista
 
